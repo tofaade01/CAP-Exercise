@@ -1,0 +1,44 @@
+GET http://localhost:4004/odata/v4/catalog/Books?
+###
+GET http://localhost:4004/odata/v4/catalog/Authors
+###
+POST http://localhost:4004/odata/v4/catalog/Authors
+Content-Type: application/json
+
+{
+    "ID": 101,
+    "name": "47823"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/Orders
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "book_ID": 202,
+    "amount": 1
+}
+###
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+    "ID": 202,
+    "title": "Test books 2",
+    "author_ID": 101,
+    "stock": 1
+}
+###
+PUT http://localhost:4004/odata/v4/catalog/Books(202)
+Content-Type: application/json
+
+{
+    "ID": 202,
+    "title": "Test books 2",
+    "author_ID": 101,
+    "stock": 9
+}
+###
+DELETE http://localhost:4004/odata/v4/catalog/Books(202)
+###
+GET http://localhost:4004/odata/v4/catalog/Books
+
