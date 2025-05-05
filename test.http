@@ -2,6 +2,8 @@ GET http://localhost:4004/odata/v4/catalog/Books?
 ###
 GET http://localhost:4004/odata/v4/catalog/Authors
 ###
+GET http://localhost:4004/odata/v4/catalog/Orders?
+###
 POST http://localhost:4004/odata/v4/catalog/Authors
 Content-Type: application/json
 
@@ -25,7 +27,9 @@ Content-Type: application/json
     "ID": 202,
     "title": "Test books 2",
     "author_ID": 101,
-    "stock": 1
+    "stock": 10,
+    "genre_ID": 4,
+    "prices": 12.5
 }
 ###
 PUT http://localhost:4004/odata/v4/catalog/Books(202)
@@ -38,7 +42,17 @@ Content-Type: application/json
     "stock": 9
 }
 ###
-DELETE http://localhost:4004/odata/v4/catalog/Books(202)
+DELETE http://localhost:4004/odata/v4/catalog/BooksComplete(202)
 ###
-GET http://localhost:4004/odata/v4/catalog/Books
+GET http://localhost:4004/odata/v4/catalog/BooksComplete
+###
+PUT http://localhost:4004/odata/v4/catalog/Orders(00462623-2f80-412c-aa26-701c19a513f4)
+Content-Type: application/json
 
+{
+    "ID": "00462623-2f80-412c-aa26-701c19a513f4",
+    "book_ID": 202,
+    "amount": 7
+}
+###
+DELETE http://localhost:4004/odata/v4/catalog/Orders(00462623-2f80-412c-aa26-701c19a513f4)

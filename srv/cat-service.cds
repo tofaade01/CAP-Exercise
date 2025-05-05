@@ -2,13 +2,15 @@ using { sap.capire as my } from '../db/schema';
 service CatalogService {
   @cds.redirection.target
   entity Books as projection on my.Books;
-  entity Authors @readonly as projection on my.Authors;
-  entity BookswithAuthors as select from my.Books {
+  entity Authors as projection on my.Authors;
+  entity BooksComplete as select from my.Books {
     ID,
     title,
-    author.ID     as author_ID,
-    author.name   as author_name
+    author.name   as author_name,
+    genre.name    as genre_name,
+    stock,
+    prices
   };
   entity Genres as projection on my.Genres;
-  entity Orders @insertonly as projection on my.Orders;
+  entity Orders as projection on my.Orders;
 } 

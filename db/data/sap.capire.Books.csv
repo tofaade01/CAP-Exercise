@@ -1,6 +1,6 @@
-ID,title,author_ID,stock
-201,Test Books,101,10
-207,Jane Eyre,107,11
-251,The Raven,150,333
-252,Eleonora,150,555
-271,Catweazle,170,22
+ID,title,author_ID,genre_ID,stock,Prices
+201,Test Books,101,1,10,100
+207,Jane Eyre,107,2,11,30
+251,The Raven,150,3,333,50
+252,Eleonora,150,4,555,20
+271,Catweazle,170,5,22,44
