@@ -36,4 +36,12 @@ entity Orders : managed {
   key ID : UUID;
   book   : Association to Books;
   amount : Integer;
+  status : String(111) default 'Pending';
+}
+
+entity submitOrder : managed { 
+  key ID : UUID;
+  book   : Association to Books;
+  amount : Integer;
+  status : String(111)
 }

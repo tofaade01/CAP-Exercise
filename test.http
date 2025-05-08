@@ -20,6 +20,15 @@ Content-Type: application/json;IEEE754Compatible=true
     "amount": 1
 }
 ###
+PUT http://localhost:4004/odata/v4/catalog/submitOrder
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "book_ID": 202,
+    "amount": 1,
+    "status": "closed"
+}
+###
 POST http://localhost:4004/odata/v4/catalog/Books
 Content-Type: application/json
 
@@ -46,13 +55,12 @@ DELETE http://localhost:4004/odata/v4/catalog/BooksComplete(202)
 ###
 GET http://localhost:4004/odata/v4/catalog/BooksComplete
 ###
-PUT http://localhost:4004/odata/v4/catalog/Orders(00462623-2f80-412c-aa26-701c19a513f4)
+PUT http://localhost:4004/odata/v4/catalog/Orders(7428b5db-9c2c-430d-bd30-e50c80388f0c)
 Content-Type: application/json
 
 {
-    "ID": "00462623-2f80-412c-aa26-701c19a513f4",
     "book_ID": 202,
     "amount": 7
 }
 ###
-DELETE http://localhost:4004/odata/v4/catalog/Orders(00462623-2f80-412c-aa26-701c19a513f4)
+DELETE http://localhost:4004/odata/v4/catalog/Orders(7428b5db-9c2c-430d-bd30-e50c80388f0c)

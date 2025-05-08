@@ -13,4 +13,5 @@ service CatalogService {
   };
   entity Genres as projection on my.Genres;
   entity Orders as projection on my.Orders;
+  entity submitOrder as projection on my.Orders;
 } 
